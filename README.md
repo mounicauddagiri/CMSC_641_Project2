@@ -9,6 +9,7 @@ How to run the code:
  4. The code generates a compressed file along with the de-compressed file.
  5. We can verify the code by comparing the original text file with the de-compressed file.
 
+Methodology
 - The text file is read and the frequency of each unique character is calculated. 
 - A leaf node for each character is created and a minimum heap of all leaf ndoes is built.
 - Then we extract the two nodes with minimum frequency from the min heap.
