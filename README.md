@@ -23,3 +23,4 @@ Huffman coding is a lossless data compression algorithm. The idea is to assign v
 - The bytes array is now stored in a new compressed bin file.
 - File de-compression is performed by first removing the padding.
 - Then the text is de-coded according to the reversed code generated and the result is saved in another text file.
+-  The original file can be produced again without loosing any bit.
