@@ -6,6 +6,7 @@ def init():
     reverse = {}
 
 class Compress:
+    # constructing an encoded text from the binary tree
     def encoded(text,code):
         encoded_text = ''
         for char in text:
@@ -13,6 +14,7 @@ class Compress:
             
         return encoded_text 
 
+    # padding the text for length greater than 8
     def padded_text(encoded_text):
         padding = 8 - (len(encoded_text)%8)
         for i in range(padding):
@@ -32,7 +34,6 @@ class Compress:
         with open (path, 'r+') as file, open (output_path, 'wb') as output:
             text = file.read()
             text = text.rstrip()
-
             frequency_dict = HuffmanCode.get_frequency(text)
             print('Frequency ' , frequency_dict)
 
@@ -51,7 +52,7 @@ class Compress:
             return output_path
 
 class Decompress:
-
+    # removing the padding for the reversed code
     def remove_padding(text):
         padded_info = text[:8]
         extra_padding = int(padded_info,2)
@@ -59,6 +60,7 @@ class Decompress:
         padding_removed_text = text[:-1*extra_padding]
         return padding_removed_text
 
+    # decoding the text into actual text
     def deCompress_text(text):
         decoded_text = ''
         current_bits = ''
@@ -71,7 +73,6 @@ class Decompress:
                 decoded_text += character
                 current_bits = ""
         return decoded_text
-
 
     def __deCompress__(self,input_path):
         filename, file_extension = os.path.splitext(input_path)

@@ -2,7 +2,7 @@ import heapq
 from msilib.schema import Binary
 from xml.sax.handler import feature_external_ges
 
-
+# Creating a binary tree
 class BinaryTree:
     def __init__(self,value,frequency):
         self.value = value
@@ -18,7 +18,7 @@ class BinaryTree:
 class HuffmanCode:
     code = {}
     reversecode = {}
-
+    # generating the frequency of each character in the text
     def get_frequency(text):
         frequ_dict = {}
         for char in text:
@@ -26,7 +26,7 @@ class HuffmanCode:
                 frequ_dict[char] = 0
             frequ_dict[char] +=1
         return frequ_dict 
-
+    # Constructing the minimum heap
     def build_heap(freq_dict):
         heap = []
         for key in freq_dict:
@@ -34,7 +34,7 @@ class HuffmanCode:
             btree_node = BinaryTree(key, frequency)
             heapq.heappush(heap,btree_node)
         return heap
-
+    # constructing the binary tree from the heap
     def build_Binarytree(heap):
         while len(heap) > 1:
             btree_node1 = heapq.heappop(heap)
@@ -45,7 +45,7 @@ class HuffmanCode:
             tempnode.right = btree_node2
             heapq.heappush(heap,tempnode)
         return heap
-    
+    # getting the code 
     def get_code(self, root, current_bits):
         if root is None:
             return
@@ -57,7 +57,7 @@ class HuffmanCode:
         self.get_code(self, root.right, current_bits+'1')
         
         return self.code,self.reversecode
-
+    # generating the code for the binary tree
     def generate_tree_code(self,heap):
         root = heapq.heappop(heap)
         code, reverse = self.get_code(self, root, '')
