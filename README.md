@@ -2,17 +2,18 @@
 
 Compressing a text file using Huffman algorithm.
 
-Huffman Algorithm:
+**Huffman Algorithm:**
+
 Huffman coding is a lossless data compression algorithm. The idea is to assign variable-length codes to input characters, lengths of the assigned codes are based on the frequencies of corresponding characters. The most frequent character gets the smallest code and the least frequent character gets the largest code.
 
-How to run the code:
+**How to run the code:**
  1. Download all the files in to your local sandbox.(Can use Visual Studio Code).
  2. Create a new test.txt file in the same directory.
  3. Run the main.py file.
  4. The code generates a compressed file along with the de-compressed file.
  5. We can verify the code by comparing the original text file with the de-compressed file.
 
-Methodology
+**Methodology**
 - The text file is read and the frequency of each unique character is calculated. 
 - A leaf node for each character is created and a minimum heap of all leaf ndoes is built.
 - Then we extract the two nodes with minimum frequency from the min heap.
