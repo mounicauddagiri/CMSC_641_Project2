@@ -1,4 +1,4 @@
-# CMSC_641_Project2
+# File Compression using Huffman algorithm
 
 Compressing a text file using Huffman algorithm.
 
